@@ -1,0 +1,53 @@
+
+version: "3"
+
+services:
+
+  # database
+  mariadb:
+    image: mariadb:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_USER: admin
+        MYSQL_PASSWORD: admin123
+        MYSQL_DATABASE: wordpress
+    volumes:
+        - wordpress_data:/var/lib/mysql
+    expose:
+        - 3306
+
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - "mariadb:db"
+    ports:
+      - "8080:80"
+
+  #wordpress
+  wordpress:
+    depends_on:
+      - mariadb
+    build: ./
+    working_dir: /var/www/html/
+    volumes:
+      - ../../app-1-wordpress/:/var/www/html/
+    environment:
+        WORDPRESS_DB_HOST: mariadb:3306
+        WORDPRESS_DB_USER: admin
+        WORDPRESS_DB_PASSWORD: admin123
+    ports:
+      - "80:80"
+    links:
+      - mailhog
+
+  #mailcatcher
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+        - 1025:1025
+        - 8025:8025
+
+# store database
+volumes:
+    wordpress_data:
