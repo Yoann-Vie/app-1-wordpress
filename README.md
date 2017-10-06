@@ -13,4 +13,7 @@ Ouvrir un navigateur et utiliser les urls suivantes
 
 ### Utilisation des outils
 * Utiliser phpmyadmin pour intéragir avec la base de donnée via une interface graphique
+    - Compte mariadb utilisé par l'application
+    - Login user : `admin`
+    - Mot de passe user : `admin123`
 * Utiliser mailhog pour récupérer tous les mails envoyés par l'application, peu importe le destinataire
