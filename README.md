@@ -2,8 +2,8 @@
 * Ouvrir un terminal dans le dossier ou le projet doit être récupéré
 * Étape 1 : `$ git clone git@github.com:Yoann-Vie/app-1-wordpress.git`
 * Étape 2 : `$ cd app-1-wordpress/docker`
-* Étape 3 : `$ docker-compose up -d`
-
+* Étape 3 : `$ docker-compose up -d --build`
+* Une fois le travail terminé, quitter l'environnement de l'application avec : `$ docker-compose down`
 ### Accès aux outils de l'application
 Ouvrir un navigateur et utiliser les urls suivantes
 
