@@ -1,4 +1,5 @@
 ## Installation
+* Ouvrir un terminal dans le dossier ou le projet doit être récupéré
 * Étape 1 : `$ git clone git@github.com:Yoann-Vie/app-1-wordpress.git`
 * Étape 2 : `$ cd app-1-wordpress/docker`
 * Étape 3 : `$ docker-compose up -d`
